@@ -1,1 +1,316 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Εκπαιδευτικό Υλικό για το Γυμνάσιο</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@900&family=Comfortaa:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Comfortaa', sans-serif;
+            background-image: url('classroom.png');
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-family: 'Fira Sans', sans-serif;
+            font-weight: 900;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-family: 'Fira Sans', sans-serif;
+            font-weight: 900;
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+        .box {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 20px auto;
+            font-family: 'Fira Sans', sans-serif;
+            font-weight: 900;
+            font-size: 1.2em;
+            line-height: 1.2;
+        }
+        .contact {
+            margin-top: 20px;
+            line-height: 1.2;
+            font-family: 'Fira Sans', sans-serif;
+            font-weight: 900;
+            font-size: 1.1em;
+        }
+        .contact a {
+            text-decoration: none;
+            color: #333;
+            display: inline-block;
+            margin: 5px 0;
+        }
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        .buttons button {
+            font-family: 'Comfortaa', sans-serif;
+            font-weight: 600;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            color: white;
+            transition: background 0.3s;
+        }
+        .buttons button:hover {
+            opacity: 0.8;
+        }
+        .footer-buttons {
+            margin-top: 40px;
+        }
+        .footer-buttons a {
+            text-decoration: none;
+            color: white;
+            background: #007BFF;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 0 10px;
+            font-size: 1em;
+        }
+        .footer-buttons a:hover {
+            background: #0056b3;
+        }
+        .escape-btn {
+            background: #FFD700;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            background: rgba(255, 255, 255, 0.9);
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            text-align: left;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #000;
+        }
+        .modal-links a {
+            display: block;
+            margin: 10px 0;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .modal-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Εκπαιδευτικό Υλικό</h1>
+    <h2>Εφαρμογές για Διαδραστικούς Πίνακες και άλλο Εκπαιδευτικό Υλικό</h2>
+    <div class="box">
+        Δημιουργία: Παναγιώτης Δόμβρος (CC BY-NC)
+    </div>
+    <div class="contact">
+        <p>📧 <a href="mailto:p.domvros@gmail.com">p.domvros@gmail.com</a></p>
+        <p>📘 <a href="https://www.facebook.com/panayotis.domvros/" target="_blank">Facebook</a></p>
+        <p>📸 <a href="https://www.instagram.com/p_domvros/" target="_blank">Instagram</a></p>
+    </div>
+    <div class="buttons">
+        <!-- Αφαιρέθηκαν τα πλήκτρα: Αρχαία Ελληνική Ιστορία, Μεσαιωνική και Βυζαντινή Ιστορία, Model United Nations -->
+        <button style="background: #33FF57;" onclick="openModal('literatureModal')">Αρχαία Ελληνική Γραμματεία</button>
+        <button style="background: #3357FF;" onclick="openModal('languageModal')">Αρχαία Ελληνική Γλώσσα</button>
+        <button style="background: #FF33A1;" onclick="openModal('modernLiteratureModal')">Νεοελληνική Λογοτεχνία</button>
+        <button style="background: #A133FF;" onclick="openModal('modernLanguageModal')">Νεοελληνική Γλώσσα</button>
+        <button style="background: #FF5733;" onclick="openModal('englishModal')">Αγγλικά</button>
+        <button style="background: #808000;" onclick="openModal('miscModal')">Διάφορα</button>
+        <button style="background: #FFD700;" onclick="openModal('escapeRoomsModal')">Escape Rooms</button>
+    </div>
+
+    <!-- Footer-style buttons -->
+    <div class="buttons footer-buttons">
+        <button style="background: #6F4E37;" onclick="window.open('https://eclass11.sch.gr/modules/video/?course=1901051484', '_blank')">
+            Οπτικοποιήσεις Γυμνασίου στο YouTube
+        </button>
+        <button style="background: #33FF57;" onclick="window.open('https://www.youtube.com/channel/UCn0jq-LEikDRVDQHQi47eYw', '_blank')">
+            YouTube
+        </button>
+        <button style="background: #FFD700;" onclick="openModal('escapeRoomsModal')">
+            Escape Rooms
+        </button>
+    </div>
+
+    <!-- Modals για τα Αφαιρεθέντα πλήκτρα έχουν διαγραφεί -->
+
+    <div id="literatureModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('literatureModal')">&times;</span>
+            <h3>Αρχαία Ελληνική Γραμματεία</h3>
+            <div class="modal-links">
+                <a href="https://pdomvros.github.io/odyssey-race/" target="_blank">Εισαγωγή στην Οδύσσεια</a>
+                <a href="https://pdomvros.github.io/odyssey2/" target="_blank">Οδύσσεια Ραψωδία β</a>
+                <a href="https://pdomvros.github.io/odyssey3/" target="_blank">Οδύσσεια Ραψωδία γ</a> 
+                <a href="https://pdomvros.github.io/odyssey4/" target="_blank">Οδύσσεια Ραψωδία δ</a>
+                <a href="https://pdomvros.github.io/odyssey-test2-4/" target="_blank">Οδύσσεια Ραψωδίες β,γ,δ</a>
+                <a href="https://pdomvros.github.io/odyssey5a//" target="_blank">Οδύσσεια Ραψωδία ε (ενότητα 7)</a>
+                <a href="https://pdomvros.github.io/odyssey5b//" target="_blank">Οδύσσεια Ραψωδία ε (ενότητα 8)</a>
+                <a href="https://pdomvros.github.io/odyssey5c//" target="_blank">Οδύσσεια Ραψωδία ε (ενότητα 9)</a>
+                <a href="https://pdomvros.github.io/odyssey5d//" target="_blank">Οδύσσεια Ραψωδία ε (ενότητα 10)</a>
+                <a href="https://pdomvros.github.io/odyssey5-collective//" target="_blank">Οδύσσεια Ραψωδία ε (Συνολική Θεώρηση)</a>
+                <a href="https://pdomvros.github.io/odyssey//" target="_blank">Οδύσσεια: Επανάληψη</a>
+                <a href="https://pdomvros.github.io/iliad-race/" target="_blank">Εισαγωγή στην Ιλιάδα</a>
+                <a href="https://pdomvros.github.io/iliad-final/" target="_blank">Επανάληψη στην Ιλιάδα</a>
+                <a href="https://pdomvros.github.io/drama-race/" target="_blank">Εισαγωγή στη Δραματική Ποίηση (Ελένη)</a>
+                <a href="https://pdomvros.github.io/helen-quotes/" target="_blank">Ποιος/ποια το είπε (Ελένη του Ευριπίδη)</a>
+                <a href="https://pdomvros.github.io/helen-episode2/" target="_blank">Ευριπίδη, Ελένη Β επεισόδιο</a>
+                <a href="https://pdomvros.github.io/helen-episode3/" target="_blank">Ευριπίδη, Ελένη Γ επεισόδιο</a>
+                <a href="https://pdomvros.github.io/helen-episode4/" target="_blank">Ευριπίδη, Ελένη Δ επεισόδιο</a>
+                <a href="https://pdomvros.github.io/helen-final/" target="_blank">Επαναληπτικές Δραστηριότητες στην Ελένη του Ευριπίδη (Γ' Γυμνασίου)</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="languageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('languageModal')">&times;</span>
+            <h3>Αρχαία Ελληνική Γλώσσα</h3>
+            <div class="modal-links">
+                <a href="https://pdomvros.github.io/lyo-race/" target="_blank">Το «λύω» στην ενεργητική φωνή</a>
+                <a href="https://pdomvros.github.io/lyomai-race/" target="_blank">Το «λύομαι» στη μέση φωνή</a>
+                <a href="https://pdomvros.github.io/ancient-nouns1/" target="_blank">Κλίση Ουσιαστικών στην Αρχαία Ελληνική</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modernLiteratureModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modernLiteratureModal')">&times;</span>
+            <h3>Νεοελληνική Λογοτεχνία</h3>
+            <div class="modal-links">
+                <a href="https://pdomvros.github.io/literature-race/" target="_blank">Εισαγωγή στη Νεοελληνική Λογοτεχνία</a>
+                <a href="https://pdomvros.github.io/figures-speech/" target="_blank">Σχήματα Λόγου</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modernLanguageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modernLanguageModal')">&times;</span>
+            <h3>Νεοελληνική Γλώσσα</h3>
+            <div class="modal-links">
+                <a href="https://pdomvros.github.io/subordinate-clauses-a/" target="_blank">Υποτακτική Σύνδεση Α' Γυμνασίου</a>
+                <a href="https://pdomvros.github.io/subordinate-clauses-g/" target="_blank">Υποτακτική Σύνδεση Γ' Γυμνασίου (1)</a>
+                <a href="https://pdomvros.github.io/subordinate-clauses-g2/" target="_blank">Υποτακτική Σύνδεση Γ' Γυμνασίου (2)</a>
+                <a href="https://pdomvros.github.io/indirect-speech1/" target="_blank">Ευθύς και Πλάγιος Λόγος (Θεωρία και Εξάσκηση)</a>
+                <a href="https://pdomvros.github.io/indirect-speech2/" target="_blank">Ευθύς και Πλάγιος Λόγος (Εξάσκηση)</a>
+                <a href="https://pdomvros.github.io/argumentative-gr/" target="_blank">Επιχειρηματολογικό Δοκίμιο(Εξάσκηση)</a>
+                <a href="https://pdomvros.github.io/argumentative-gr-voice/" target="_blank">Επιχειρηματολογικό Δοκίμιο(Εξάσκηση με Φωνητική Καταγραφή)</a>
+                <a href="https://pdomvros.github.io/descriptive-essay-place/" target="_blank">Περιγραφικό Δοκίμιο: Τόποι & Εσωτερικοί Χώροι</a>
+                <a href="https:https://pdomvros.github.io/desriptive-essay-person/" target="_blank">Περιγραφή Προσώπων </a>
+                <a href="https://pdomvros.github.io/writing-article/" target="_blank">Άρθρο στη Σχολική Εφημερίδα </a>
+                <a href="https://pdomvros.github.io/writing-speech/" target="_blank">Ομιλία σε Κοινό </a>
+                <a href="https://pdomvros.github.io/writing-letter/" target="_blank">Επιστολή </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="englishModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('englishModal')">&times;</span>
+            <h3>Αγγλικά</h3>
+            <div class="modal-links">
+                <a href="https://pdomvros.github.io/argumentative-B2/" target="_blank">Argumentative Essay B2</a>
+                <a href="https://pdomvros.github.io/argumentative-B2-voice/" target="_blank">Argumentative Essay B2 (Voice Typing)</a>
+                <a href="https://panagiotis-domvros.github.io/back-to-the-future-2/" target="_blank">Future Scenarios</a>
+                <a href="https://panagiotis-domvros.github.io/future-job/" target="_blank">Future Jobs</a>
+                <a href="https://panagiotis-domvros.github.io/future-home/" target="_blank">Future Homes</a>
+                <a href="https://panagiotis-domvros.github.io/soulmate-partner/" target="_blank">Future Soulmate</a>
+                <a href="https://pdomvros.github.io/letter-from-the-past/" target="_blank">Letters from the Past</a>
+                <a href="https://pdomvros.github.io/love-hangman-en/" target="_blank">Hangman of Love</a>
+                <a href="https://panagiotis-domvros.github.io/argument-v/" target="_blank">The Argument Builder</a>
+                <a href="https://panagiotis-domvros.github.io/position-paper/" target="_blank">MUN Position Paper Builder</a>
+                <a href="https://panagiotis-domvros.github.io/draft-resolution/" target="_blank">MUN Draft Resolution Builder</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="miscModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('miscModal')">&times;</span>
+            <h3>Διάφορα</h3>
+            <div class="modal-links">
+                <a href="https://pdomvros.github.io/love-hangman-gr/" target="_blank">Κρεμάλα της Αγάπης</a>
+                <a href="https://pdomvros.github.io/bullying-gr/" target="_blank">Δραστηριότητα για τον Εκφοβισμό</a>
+                <a href="https://pdomvros.github.io/bullying-eng/" target="_blank">Activity about Bullying</a>
+                <a href="https://pdomvros.github.io/final-exams/" target="_blank">Παρουσίαση των γραπτών εξετάσεων </a>
+                <a href="https://pdomvros.github.io/history-b-rev-t-f/" target="_blank">Επανάληψη Ιστορίας Β Γυμνασίου </a>
+                <a href="https://pdomvros.github.io/history-and-a-day/" target="_blank">History and a Day </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="escapeRoomsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('escapeRoomsModal')">&times;</span>
+            <h3>Escape Rooms</h3>
+            <div class="modal-links">
+                <a href="https://docs.google.com/presentation/d/1EPFDaKxisv7sq3fjJoAXt1FF4um0X68I5c9LQxGlwCY/present?usp=sharing" target="_blank">Η Έξοδος του Μεσολογγίου</a>
+                <a href="https://docs.google.com/presentation/d/11pubC68l3wsZLsiw0q0G3je5bFue9TPqlWZQZN3b-p4/present?usp=sharing" target="_blank">Το Ναυάγιο της Περιστέρας</a>
+                <a href="https://docs.google.com/presentation/d/1HEeLthwJfA5SXdLML-XdNDIZdSlvbpAEeZS3shHYcRg/present?usp=sharing" target="_blank">Αρχαϊκή Εποχή: Τα γράμματα και οι τέχνες</a>
+                <a href="https://docs.google.com/presentation/d/1FycxBv3svixsQvO6xqVxpcMg19Vp7Qg33HGrLk7mQmk/present?usp=sharing" target="_blank">Ανακεφαλαίωση Ιστορίας Α' Γυμνασίου</a>
+                <a href="https://docs.google.com/presentation/d/1keIWPof0MVegUFy2dwA8OepQ3j2EkaolS7oxLQEOz0Q/present?usp=sharing" target="_blank">Έριδες για το ζήτημα των εικόνων</a>
+                <a href="https://docs.google.com/presentation/d/1_vXT4LL7ErorS9nIKmslEnaDi7JbbZtZ8uSdxIe59y4/edit?usp=sharing" target="_blank">Η Δίκη της Εικονομαχίας</a>
+                <a href="https://docs.google.com/presentation/d/159iIW5_HJZgOFGHJW58A-nnjGx-3pFMq8jsdpHmYqaU/present?usp=sharing" target="_blank">Αρχαία Ελληνική Γλώσσα 1</a>
+                <a href="https://docs.google.com/presentation/d/1TGlxMlZvhpfFL8HL2iHczd9_qc77Vhnl5eG36tS70Vk/present?usp=sharing" target="_blank">Ελληνική Γλώσσα 1</a>
+                <a href="https://docs.google.com/presentation/d/12gr7cc7GFafp02bikCDuKTMUPkJERD3tulBFordixv8/present?usp=sharing" target="_blank">First Aid Escape Room</a>
+                <a href="https://docs.google.com/presentation/d/1QAr01U8DAxTePxeFF1EBXFIUvNgoKLwDQ9X7Vefc9Q8/present?usp=sharing" target="_blank">Η Διάσωση του Ρωμαίου και της Ιουλιέτας (διαθεματικό)</a>
+                <a href="https://docs.google.com/presentation/d/1Mm3e7fPnmWna8tCp8sO9PK2iiv63neSH_zk6gcI36jg/present?usp=sharing" target="_blank">Η απόδραση των Χριστουγέννων</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
 
