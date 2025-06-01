@@ -73,24 +73,6 @@
         .buttons button:hover {
             opacity: 0.8;
         }
-        .footer-buttons {
-            margin-top: 40px;
-        }
-        .footer-buttons a {
-            text-decoration: none;
-            color: white;
-            background: #007BFF;
-            padding: 10px 20px;
-            border-radius: 5px;
-            margin: 0 10px;
-            font-size: 1em;
-        }
-        .footer-buttons a:hover {
-            background: #0056b3;
-        }
-        .escape-btn {
-            background: #FFD700;
-        }
         .modal {
             display: none;
             position: fixed;
@@ -144,31 +126,15 @@
         <p>📸 <a href="https://www.instagram.com/p_domvros/" target="_blank">Instagram</a></p>
     </div>
     <div class="buttons">
-        <!-- Αφαιρέθηκαν τα πλήκτρα: Αρχαία Ελληνική Ιστορία, Μεσαιωνική και Βυζαντινή Ιστορία, Model United Nations -->
+        <!-- Αφαιρέθηκαν τα πλήκτρα για Διάφορα και Escape Rooms -->
         <button style="background: #33FF57;" onclick="openModal('literatureModal')">Αρχαία Ελληνική Γραμματεία</button>
         <button style="background: #3357FF;" onclick="openModal('languageModal')">Αρχαία Ελληνική Γλώσσα</button>
         <button style="background: #FF33A1;" onclick="openModal('modernLiteratureModal')">Νεοελληνική Λογοτεχνία</button>
         <button style="background: #A133FF;" onclick="openModal('modernLanguageModal')">Νεοελληνική Γλώσσα</button>
         <button style="background: #FF5733;" onclick="openModal('englishModal')">Αγγλικά</button>
-        <button style="background: #808000;" onclick="openModal('miscModal')">Διάφορα</button>
-        <button style="background: #FFD700;" onclick="openModal('escapeRoomsModal')">Escape Rooms</button>
     </div>
 
-    <!-- Footer-style buttons -->
-    <div class="buttons footer-buttons">
-        <button style="background: #6F4E37;" onclick="window.open('https://eclass11.sch.gr/modules/video/?course=1901051484', '_blank')">
-            Οπτικοποιήσεις Γυμνασίου στο YouTube
-        </button>
-        <button style="background: #33FF57;" onclick="window.open('https://www.youtube.com/channel/UCn0jq-LEikDRVDQHQi47eYw', '_blank')">
-            YouTube
-        </button>
-        <button style="background: #FFD700;" onclick="openModal('escapeRoomsModal')">
-            Escape Rooms
-        </button>
-    </div>
-
-    <!-- Modals για τα Αφαιρεθέντα πλήκτρα έχουν διαγραφεί -->
-
+    <!-- Modals για τα αφαιρεμένα πλήκτρα έχουν διαγραφεί -->
     <div id="literatureModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('literatureModal')">&times;</span>
@@ -233,10 +199,10 @@
                 <a href="https://pdomvros.github.io/argumentative-gr/" target="_blank">Επιχειρηματολογικό Δοκίμιο(Εξάσκηση)</a>
                 <a href="https://pdomvros.github.io/argumentative-gr-voice/" target="_blank">Επιχειρηματολογικό Δοκίμιο(Εξάσκηση με Φωνητική Καταγραφή)</a>
                 <a href="https://pdomvros.github.io/descriptive-essay-place/" target="_blank">Περιγραφικό Δοκίμιο: Τόποι & Εσωτερικοί Χώροι</a>
-                <a href="https:https://pdomvros.github.io/desriptive-essay-person/" target="_blank">Περιγραφή Προσώπων </a>
-                <a href="https://pdomvros.github.io/writing-article/" target="_blank">Άρθρο στη Σχολική Εφημερίδα </a>
-                <a href="https://pdomvros.github.io/writing-speech/" target="_blank">Ομιλία σε Κοινό </a>
-                <a href="https://pdomvros.github.io/writing-letter/" target="_blank">Επιστολή </a>
+                <a href="https://https://pdomvros.github.io/desriptive-essay-person/" target="_blank">Περιγραφή Προσώπων</a>
+                <a href="https://pdomvros.github.io/writing-article/" target="_blank">Άρθρο στη Σχολική Εφημερίδα</a>
+                <a href="https://pdomvros.github.io/writing-speech/" target="_blank">Ομιλία σε Κοινό</a>
+                <a href="https://pdomvros.github.io/writing-letter/" target="_blank">Επιστολή</a>
             </div>
         </div>
     </div>
@@ -261,41 +227,6 @@
         </div>
     </div>
 
-    <div id="miscModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('miscModal')">&times;</span>
-            <h3>Διάφορα</h3>
-            <div class="modal-links">
-                <a href="https://pdomvros.github.io/love-hangman-gr/" target="_blank">Κρεμάλα της Αγάπης</a>
-                <a href="https://pdomvros.github.io/bullying-gr/" target="_blank">Δραστηριότητα για τον Εκφοβισμό</a>
-                <a href="https://pdomvros.github.io/bullying-eng/" target="_blank">Activity about Bullying</a>
-                <a href="https://pdomvros.github.io/final-exams/" target="_blank">Παρουσίαση των γραπτών εξετάσεων </a>
-                <a href="https://pdomvros.github.io/history-b-rev-t-f/" target="_blank">Επανάληψη Ιστορίας Β Γυμνασίου </a>
-                <a href="https://pdomvros.github.io/history-and-a-day/" target="_blank">History and a Day </a>
-            </div>
-        </div>
-    </div>
-
-    <div id="escapeRoomsModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('escapeRoomsModal')">&times;</span>
-            <h3>Escape Rooms</h3>
-            <div class="modal-links">
-                <a href="https://docs.google.com/presentation/d/1EPFDaKxisv7sq3fjJoAXt1FF4um0X68I5c9LQxGlwCY/present?usp=sharing" target="_blank">Η Έξοδος του Μεσολογγίου</a>
-                <a href="https://docs.google.com/presentation/d/11pubC68l3wsZLsiw0q0G3je5bFue9TPqlWZQZN3b-p4/present?usp=sharing" target="_blank">Το Ναυάγιο της Περιστέρας</a>
-                <a href="https://docs.google.com/presentation/d/1HEeLthwJfA5SXdLML-XdNDIZdSlvbpAEeZS3shHYcRg/present?usp=sharing" target="_blank">Αρχαϊκή Εποχή: Τα γράμματα και οι τέχνες</a>
-                <a href="https://docs.google.com/presentation/d/1FycxBv3svixsQvO6xqVxpcMg19Vp7Qg33HGrLk7mQmk/present?usp=sharing" target="_blank">Ανακεφαλαίωση Ιστορίας Α' Γυμνασίου</a>
-                <a href="https://docs.google.com/presentation/d/1keIWPof0MVegUFy2dwA8OepQ3j2EkaolS7oxLQEOz0Q/present?usp=sharing" target="_blank">Έριδες για το ζήτημα των εικόνων</a>
-                <a href="https://docs.google.com/presentation/d/1_vXT4LL7ErorS9nIKmslEnaDi7JbbZtZ8uSdxIe59y4/edit?usp=sharing" target="_blank">Η Δίκη της Εικονομαχίας</a>
-                <a href="https://docs.google.com/presentation/d/159iIW5_HJZgOFGHJW58A-nnjGx-3pFMq8jsdpHmYqaU/present?usp=sharing" target="_blank">Αρχαία Ελληνική Γλώσσα 1</a>
-                <a href="https://docs.google.com/presentation/d/1TGlxMlZvhpfFL8HL2iHczd9_qc77Vhnl5eG36tS70Vk/present?usp=sharing" target="_blank">Ελληνική Γλώσσα 1</a>
-                <a href="https://docs.google.com/presentation/d/12gr7cc7GFafp02bikCDuKTMUPkJERD3tulBFordixv8/present?usp=sharing" target="_blank">First Aid Escape Room</a>
-                <a href="https://docs.google.com/presentation/d/1QAr01U8DAxTePxeFF1EBXFIUvNgoKLwDQ9X7Vefc9Q8/present?usp=sharing" target="_blank">Η Διάσωση του Ρωμαίου και της Ιουλιέτας (διαθεματικό)</a>
-                <a href="https://docs.google.com/presentation/d/1Mm3e7fPnmWna8tCp8sO9PK2iiv63neSH_zk6gcI36jg/present?usp=sharing" target="_blank">Η απόδραση των Χριστουγέννων</a>
-            </div>
-        </div>
-    </div>
-
     <script>
         function openModal(modalId) {
             document.getElementById(modalId).style.display = "block";
@@ -313,4 +244,3 @@
     </script>
 </body>
 </html>
-
